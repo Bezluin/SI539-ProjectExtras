@@ -3,8 +3,8 @@
 /* page layout */
 .pageContainer{
   display: grid;
-  grid-template-rows: 60px 1fr 30px;
-  grid-template-columns: 2fr 7fr 2fr;
+  grid-template-rows: 10vh 1fr 5vh;
+  grid-template-columns: 25vh 7fr 15vh;
   grid-template-areas:
     "header header header"
     "nav main aside"
@@ -38,23 +38,21 @@ footer{
 
 /* CSS for text styling */
 h1{
-  font-size: 6vw;
+  font-size: 6vh;
   color: #ffcb05;
   text-align: center;
+  vertical-align: middle;
 }
 h2{
-  font-size: 4vw;
+  font-size: 4vh;
   color: #ffcb05;
   text-align: center;
 }
 main p{
-  font-size: 3vw;
+  font-size: 3vh;
   color: #ffffff;
 }
-nav ul li a{
-  font-size: 3vw;
-  color: #ffcb05;
-}
+
 
 #maincontent div a{
   color: #ffcb05;
@@ -99,7 +97,7 @@ nav ul li{
   color: black;
 }
 nav ul li a{
-  font-size: 2vw;
+  font-size: 2vh;
   width: 200px;
   background-color: none;
   text-decoration: none;
@@ -123,7 +121,7 @@ img{
 /* CSS for gallery grid on Scenery page */
 .gallery{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5rem;
   justify-items: center;
   min-width: 250px;
@@ -134,16 +132,20 @@ img{
   height: auto;
 }
 
-/* CSS for Hatcher seal on Index page */
+/* CSS for Index page */
+.indexpage_content{
+  text-align: center;
+  justify-content: center;
+}
 #hatcher_seal{
-  width: 90%;
+  width: 95%;
   height: auto;
   min-width: 250px;
 }
 
 /* CSS for About page content */
 .aboutpage_content{
-  width:90%;
+  width:99%;
   text-align: center;
 }
 
@@ -154,4 +156,178 @@ img{
 .landmarkspage_content div a{
   font-size: 4vw;
   text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+/* Between smartphones to Laptops ---------- */
+@media only screen and (min-width : 481px) and (max-width : 1223px) {
+  /* page layout */
+  .pageContainer{
+    display: grid;
+    grid-template-rows: 10vh 8vh 5fr 5vh;
+    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "aside-left main aside-right"
+      "footer footer footer";
+    grid-gap: .75em;
+  }
+
+  header{
+      grid-area: header;
+      background-color: #00274c;
+  }
+  nav{
+      grid-area: nav;
+      background-color: #45455A;
+  }
+  main{
+      grid-area: main;
+      background-color: #000000;
+  }
+  aside-left{
+      grid-area: aside;
+      background-color: #000000;
+  }
+  aside-right{
+      grid-area: aside;
+      background-color: #000000;
+  }
+  footer{
+      grid-area: footer;
+      background-color: #ffffff;
+      border-style: solid;
+      border-color: #000000;
+      border-width: 0.2vw;
+  }
+  /* CSS for nav bar */
+  nav ul{
+    display: grid;
+    padding: 0.75vw;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  nav ul li a{
+    font-size: 3vw;
+  }
+
+  /* CSS for text styling */
+  h1{
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+  }
+  h2{
+    font-size: 3vw;
+  }
+  main p{
+    font-size: 2vw;
+  }
+  #maincontent div a{
+    color: #ffcb05;
+  }
+
+  /* Index page welcome text */
+  #welcometext{
+    font-size: 3vw;
+  }
+
+  /* CSS for gallery grid on Scenery page */
+  .gallery{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* CSS for Landmarks page content */
+  .landmarkspage_content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+  /* page layout */
+  .pageContainer{
+    display: grid;
+    grid-template-rows: 10vh 8vh 5fr 5vh;
+    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "aside-left main aside-right"
+      "footer footer footer";
+    grid-gap: .75em;
+  }
+
+  header{
+      grid-area: header;
+      background-color: #00274c;
+  }
+  nav{
+      grid-area: nav;
+      background-color: #45455A;
+  }
+  main{
+      grid-area: main;
+      background-color: #000000;
+  }
+  aside-left{
+      grid-area: aside;
+      background-color: #000000;
+  }
+  aside-right{
+      grid-area: aside;
+      background-color: #000000;
+  }
+  footer{
+      grid-area: footer;
+      background-color: #ffffff;
+      border-style: solid;
+      border-color: #000000;
+      border-width: 0.2vw;
+  }
+
+  /* CSS for nav bar */
+  nav ul{
+    display: grid;
+    padding: 0.75vw;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  nav ul li a{
+    font-size: 3vw;
+  }
+
+  /* CSS for text styling */
+  h1{
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+  }
+  h2{
+    font-size: 3vw;
+  }
+  main p{
+    font-size: 2vw;
+  }
+  #maincontent div a{
+    color: #ffcb05;
+  }
+
+  /* Index page welcome text */
+  #welcometext{
+    font-size: 3vw;
+  }
+
+  /* CSS for gallery grid on Scenery page */
+  .gallery{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* CSS for Landmarks page content */
+  .landmarkspage_content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
