@@ -1,1 +1,47 @@
 /* Smartphone view/default */
+
+/* page layout */
+.pageContainer{
+  display: grid;
+  grid-template-rows: 60px 1fr 30px;
+  grid-template-columns: 2fr 7fr 2fr;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  grid-gap: .75em;
+}
+
+header{
+    grid-area: header;
+    background-color: teal;
+}
+nav{
+    grid-area: nav;
+    background-color: tomato;
+}
+main{
+    grid-area: main;
+    background-color: lightblue;
+}
+aside{
+    grid-area: aside;
+    background-color: orange;
+}
+footer{
+    grid-area: footer;
+    background-color: lightgreen;
+}
+
+/* CSS for gallery grid on scenery page */
+.gallery img{
+  width: 100%;
+  height: auto;
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  justify-content: center;
+}
