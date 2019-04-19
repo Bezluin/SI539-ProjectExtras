@@ -14,34 +14,144 @@
 
 header{
     grid-area: header;
-    background-color: teal;
+    background-color: #00274c;
 }
 nav{
     grid-area: nav;
-    background-color: tomato;
+    background-color: #00274c;
 }
 main{
     grid-area: main;
-    background-color: lightblue;
+    background-color: #000000;
 }
 aside{
     grid-area: aside;
-    background-color: orange;
+    background-color: #000000;
 }
 footer{
     grid-area: footer;
-    background-color: lightgreen;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #000000;
+    border-width: 0.2vw;
 }
 
-/* CSS for gallery grid on scenery page */
-.gallery img{
-  width: 100%;
+/* CSS for text styling */
+h1{
+  font-size: 6vw;
+  color: #ffcb05;
+  text-align: center;
+}
+h2{
+  font-size: 4vw;
+  color: #ffcb05;
+  text-align: center;
+}
+main p{
+  font-size: 3vw;
+  color: #ffffff;
+}
+nav ul li a{
+  font-size: 3vw;
+  color: #ffcb05;
+}
+
+#maincontent div a{
+  color: #ffcb05;
+}
+
+/* CSS code for skiplink was referenced from https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/mouse-and-keyboard-events/skip-to-main-content/ */
+.skiplink {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+.skiplink:focus, .skiplink:active {
+    color: #FFFF00;
+    background-color:#000;
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 15px;
+    border:4px solid yellow;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+}
+
+/* CSS for nav bar */
+nav ul{
+  display: grid;
+  padding: 0.75vw;
+  grid-template-rows: repeat(4, 1fr);
+}
+nav ul li{
+  display: block;
+  background-color: #474F61;
+  color: black;
+}
+nav ul li a{
+  font-size: 2vw;
+  width: 200px;
+  background-color: none;
+  text-decoration: none;
+  color: white;
+}
+nav ul li a:hover {
+  color: #ffcb05;
+}
+
+.current{
+  text-decoration: underline;
+  color: #ffcb05;
+}
+
+/* default CSS for images */
+img{
+  width: 90%;
   height: auto;
 }
 
+/* CSS for gallery grid on Scenery page */
 .gallery{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-  justify-content: center;
+  grid-gap: 0.5rem;
+  justify-items: center;
+  min-width: 250px;
+}
+
+.gallery img{
+  width: 90%;
+  height: auto;
+}
+
+/* CSS for Hatcher seal on Index page */
+#hatcher_seal{
+  width: 90%;
+  height: auto;
+  min-width: 250px;
+}
+
+/* CSS for About page content */
+.aboutpage_content{
+  width:90%;
+  text-align: center;
+}
+
+/* CSS for Landmarks page content */
+.landmarkspage_content{
+  text-align: center;
+}
+.landmarkspage_content div a{
+  font-size: 4vw;
+  text-decoration: none;
 }
