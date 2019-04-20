@@ -354,55 +354,54 @@ img{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: auto;
-  border: 1px solid #00274c;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
 
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    border: 1px solid #00274c;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
 
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
 
-/* Style the back side */
-.flip-card-back {
-  background-color: #00274c;
-  color: white;
-  font-size: 1.2vw;
-  transform: rotateY(180deg);
-}
-}
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
 
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #00274c;
+    color: white;
+    font-size: 1.2vw;
+    transform: rotateY(180deg);
+  }
+}
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
@@ -487,19 +486,5 @@ img{
   .landmarkspage_content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* CSS for Aside-left */
-  aside-left p{
-    font-color: #ffcb05;
-  }
-
-
-  /* Style the back side */
-  .flip-card-back {
-    background-color: #00274c;
-    color: white;
-    font-size: 1.2vw;
-    transform: rotateY(180deg);
   }
 }
