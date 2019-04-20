@@ -7,9 +7,9 @@
   grid-template-columns: 25vh 7fr 15vh;
   grid-template-areas:
     "header header header"
-    "nav main aside"
+    "nav main main"
     "footer footer footer";
-  grid-gap: .75em;
+  grid-gap: .05em;
 }
 
 header{
@@ -53,6 +53,7 @@ main p{
   color: #ffffff;
 }
 
+/* CSS for main content */
 #maincontent{
   padding:1vh;
 }
@@ -89,6 +90,10 @@ main p{
 }
 
 /* CSS for nav bar */
+nav a:hover {
+  color: #ffcb05;
+}
+
 nav ul{
   display: grid;
   padding: 0.75vw;
@@ -124,9 +129,9 @@ nav ul li a:hover {
 }
 
 /*Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
+/* .sticky + .content {
+  padding-top: 10px;
+} */
 
 /* default CSS for images */
 img{
@@ -182,13 +187,13 @@ img{
   .pageContainer{
     display: grid;
     grid-template-rows: 10vh 8vh 5fr 5vh;
-    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-columns: 1fr 15fr 1fr;
     grid-template-areas:
       "header header header"
       "nav nav nav"
       "aside-left main aside-right"
       "footer footer footer";
-    grid-gap: .75em;
+    grid-gap: .0.05em;
   }
 
   header{
@@ -268,13 +273,13 @@ img{
   .pageContainer{
     display: grid;
     grid-template-rows: 10vh 8vh 5fr 5vh;
-    grid-template-columns: 1fr 12fr 1fr;
+    grid-template-columns: 1fr 15fr 1fr;
     grid-template-areas:
       "header header header"
       "nav nav nav"
       "aside-left main aside-right"
       "footer footer footer";
-    grid-gap: .75em;
+    grid-gap: .05em;
   }
 
   header{

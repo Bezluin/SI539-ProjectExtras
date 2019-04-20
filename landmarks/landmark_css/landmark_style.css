@@ -2,42 +2,6 @@
 
 /* Smartphone view/default */
 
-/* page layout */
-.pageContainer{
-  display: grid;
-  grid-template-rows: 60px 1fr 30px;
-  grid-template-columns: 2fr 7fr 2fr;
-  grid-template-areas:
-    "header header header"
-    "nav main aside"
-    "footer footer footer";
-  grid-gap: .75em;
-}
-
-header{
-    grid-area: header;
-    background-color: #00274c;
-}
-nav{
-    grid-area: nav;
-    background-color: #00274c;
-}
-main{
-    grid-area: main;
-    background-color: #000000;
-}
-aside{
-    grid-area: aside;
-    background-color: #000000;
-}
-footer{
-    grid-area: footer;
-    background-color: #ffffff;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 0.2vw;
-}
-
 /* CSS for text styling */
 h1{
   font-size: 6vw;
@@ -163,8 +127,8 @@ nav ul li a:hover {
 }
 /* container for ensuring rotated images do not overflow */
 .rotated_image{
-  width: 450px;
-  height: 450px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
 }
 
@@ -176,46 +140,6 @@ nav ul li a:hover {
 
 /* Between smartphones to Laptops ---------- */
 @media only screen and (min-width : 481px) and (max-width : 1223px) {
-  /* page layout */
-  .pageContainer{
-    display: grid;
-    grid-template-rows: 10vh 8vh 5fr 5vh;
-    grid-template-columns: 1fr 12fr 1fr;
-    grid-template-areas:
-      "header header header"
-      "nav nav nav"
-      "aside-left main aside-right"
-      "footer footer footer";
-    grid-gap: .75em;
-  }
-
-  header{
-      grid-area: header;
-      background-color: #00274c;
-  }
-  nav{
-      grid-area: nav;
-      background-color: #45455A;
-  }
-  main{
-      grid-area: main;
-      background-color: #000000;
-  }
-  aside-left{
-      grid-area: aside;
-      background-color: #000000;
-  }
-  aside-right{
-      grid-area: aside;
-      background-color: #000000;
-  }
-  footer{
-      grid-area: footer;
-      background-color: #ffffff;
-      border-style: solid;
-      border-color: #000000;
-      border-width: 0.2vw;
-  }
 
   /* CSS for nav bar */
   nav ul{
@@ -259,46 +183,7 @@ nav ul li a:hover {
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
-  /* page layout */
-  .pageContainer{
-    display: grid;
-    grid-template-rows: 10vh 8vh 5fr 5vh;
-    grid-template-columns: 1fr 12fr 1fr;
-    grid-template-areas:
-      "header header header"
-      "nav nav nav"
-      "aside-left main aside-right"
-      "footer footer footer";
-    grid-gap: .75em;
-  }
 
-  header{
-      grid-area: header;
-      background-color: #00274c;
-  }
-  nav{
-      grid-area: nav;
-      background-color: #45455A;
-  }
-  main{
-      grid-area: main;
-      background-color: #000000;
-  }
-  aside-left{
-      grid-area: aside;
-      background-color: #000000;
-  }
-  aside-right{
-      grid-area: aside;
-      background-color: #000000;
-  }
-  footer{
-      grid-area: footer;
-      background-color: #ffffff;
-      border-style: solid;
-      border-color: #000000;
-      border-width: 0.2vw;
-  }
   /* CSS for nav bar */
   nav ul{
     display: grid;
