@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <title>suggestionform</title>
+  <body>
+
+  <p>Enter your suggestions for UMich campus landmarks to be added:</p>
+  <p>(Input text must be at least 4 letters long)</p>
+
+  <input id="suggestion" type="text" minlength = 4 maxlength = 300 required >
+  <button onclick="myFunction()">OK</button>
+
+  <p id="responsetoinput"></p>
+
+  <script>
+  function myFunction() {
+    var inputtext = document.getElementById("suggestion");
+    if (!inputtext.checkValidity()) {
+      document.getElementById("responsetoinput").innerHTML = inputtext.validationMessage;
+    } else {
+      document.getElementById("responsetoinput").innerHTML = "Feedback recieved. Thank you very much.";
+    }
+  }
+  </script>
+
+  </body>
+</html>

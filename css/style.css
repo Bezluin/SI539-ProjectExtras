@@ -4,10 +4,10 @@
 .pageContainer{
   display: grid;
   grid-template-rows: 10vh 1fr 5vh;
-  grid-template-columns: 25vh 7fr 15vh;
+  grid-template-columns: 2fr 7fr 15vh;
   grid-template-areas:
     "header header header"
-    "nav main main"
+    "nav main aside"
     "footer footer footer";
   grid-gap: .05em;
 }
@@ -24,9 +24,13 @@ main{
     grid-area: main;
     background-color: #000000;
 }
-aside{
+aside-left{
     grid-area: aside;
     background-color: #000000;
+}
+aside-right{
+  grid-area: aside;
+  background-color: #000000;
 }
 footer{
     grid-area: footer;
@@ -161,7 +165,6 @@ img{
 #hatcher_seal{
   width: 95%;
   height: auto;
-  min-width: 250px;
 }
 
 /* CSS for About page content */
@@ -179,6 +182,93 @@ img{
   text-decoration: none;
 }
 
+/* Callout box */
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  height: auto;
+  max-width: 300px;
+}
+
+/* Callout header */
+.callout-header {
+  padding: 25px 15px;
+  background: teal;
+  font-size: 30px;
+  color: white;
+}
+
+/* Callout context */
+.callout-context {
+  padding: 1vw;
+  background-color: #EAEBEF;
+  font-size:10px;
+  color: black
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color: lightgrey;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: 1px solid ##00274c;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #00274c;
+  color: white;
+  font-size: 0.5vw;
+  transform: rotateY(180deg);
+}
+
 /* MEDIA QUERIES */
 
 /* Between smartphones to Laptops ---------- */
@@ -193,7 +283,7 @@ img{
       "nav nav nav"
       "aside-left main aside-right"
       "footer footer footer";
-    grid-gap: .0.05em;
+    grid-gap: .05em;
   }
 
   header{
@@ -209,11 +299,11 @@ img{
       background-color: #000000;
   }
   aside-left{
-      grid-area: aside;
+      grid-area: aside-left;
       background-color: #000000;
   }
   aside-right{
-      grid-area: aside;
+      grid-area: aside-right;
       background-color: #000000;
   }
   footer{
@@ -266,6 +356,53 @@ img{
   }
 }
 
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  border: 1px solid #00274c;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #00274c;
+  color: white;
+  font-size: 1.2vw;
+  transform: rotateY(180deg);
+}
+}
+
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {
@@ -295,12 +432,12 @@ img{
       background-color: #000000;
   }
   aside-left{
-      grid-area: aside;
-      background-color: #000000;
+      grid-area: aside-left;
+      background-color: #00274c;
   }
   aside-right{
-      grid-area: aside;
-      background-color: #000000;
+      grid-area: aside-right;
+      background-color: #00274c;
   }
   footer{
       grid-area: footer;
@@ -350,5 +487,19 @@ img{
   .landmarkspage_content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CSS for Aside-left */
+  aside-left p{
+    font-color: #ffcb05;
+  }
+
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #00274c;
+    color: white;
+    font-size: 1.2vw;
+    transform: rotateY(180deg);
   }
 }
